@@ -15,13 +15,11 @@ class FoodServices {
       }
       return Failure(code: 100, errorResponse: 'Invalid Response,Try again later');
     } on HttpException {
-      return Failure(code: 101, errorResponse: 'No Internet, Connect to the internet and refresh');
+      return Failure(code: 101, errorResponse: 'No Interne');
     } on FormatException {
       return Failure(code: 102, errorResponse: 'Invalid Format');
-    } on SocketException {
-      return Failure(code: 103, errorResponse: 'No Internet');
     } catch (e) {
-      return Failure(code: 104, errorResponse: 'Unknown Error, Please try again');
+      return Failure(code: 103, errorResponse: 'Unknown Error');
     }
   }
 }
